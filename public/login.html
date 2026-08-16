@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FacultyCheck — Log In</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%235B4FF0'/%3E%3Cstop offset='1' stop-color='%23372EA8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='44' height='44' rx='13' fill='url(%23g)'/%3E%3Cpath d='M13 15h14M13 22h10M13 29h7' stroke='white' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="brand">
+
+        <svg class="brand-badge" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="badgeGrad3" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#5B4FF0"/>
+                    <stop offset="1" stop-color="#372EA8"/>
+                </linearGradient>
+            </defs>
+            <rect width="44" height="44" rx="13" fill="url(#badgeGrad3)"/>
+            <path d="M13 15h14M13 22h10M13 29h7" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="33" cy="31" r="4" fill="#B3902F" stroke="#f2effa" stroke-width="1.5"/>
+        </svg>
+
+        <div>
+            <h2>FacultyCheck</h2>
+            <span>Sign In</span>
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="auth-wrap">
+
+    <div class="auth-card">
+
+        <div class="auth-tabs">
+            <button id="studentTabBtn" class="auth-tab active" type="button">Student</button>
+            <button id="teacherTabBtn" class="auth-tab" type="button">Faculty</button>
+            <button id="adminTabBtn" class="auth-tab" type="button">Admin</button>
+        </div>
+
+
+        <!-- Student pane -->
+
+        <div id="studentPane">
+
+            <form id="studentLoginForm">
+
+                <span class="eyebrow">STUDENT LOGIN</span>
+                <h1 class="auth-title">Welcome back</h1>
+                <p class="auth-subtitle">Log in to save your favorite teachers.</p>
+
+                <label>Email</label>
+                <input type="email" id="studentLoginEmail" required>
+
+                <label>Password</label>
+                <input type="password" id="studentLoginPassword" required>
+
+                <button class="primary-btn" type="submit">Log In</button>
+
+                <p class="auth-switch">
+                    New here? <a href="#" id="showStudentSignup">Create a student account</a>
+                </p>
+
+            </form>
+
+
+            <form id="studentSignupForm" style="display:none;">
+
+                <span class="eyebrow">STUDENT SIGN UP</span>
+                <h1 class="auth-title">Create your account</h1>
+                <p class="auth-subtitle">Browsing stays open either way — this just lets you save favorites.</p>
+
+                <label>Name</label>
+                <input type="text" id="studentSignupName" required>
+
+                <label>Email</label>
+                <input type="email" id="studentSignupEmail" required>
+
+                <label>Password</label>
+                <input type="password" id="studentSignupPassword" minlength="6" required>
+
+                <button class="primary-btn" type="submit">Create Account</button>
+
+                <p class="auth-switch">
+                    Already registered? <a href="#" id="showStudentLogin">Log in</a>
+                </p>
+
+            </form>
+
+        </div>
+
+
+        <!-- Teacher pane -->
+
+        <div id="teacherPane" style="display:none;">
+
+            <form id="teacherLoginForm">
+
+                <span class="eyebrow">FACULTY LOGIN</span>
+                <h1 class="auth-title">Welcome back</h1>
+                <p class="auth-subtitle">Log in to manage your availability.</p>
+
+                <label>Email</label>
+                <input type="email" id="loginEmail" required>
+
+                <label>Password</label>
+                <input type="password" id="loginPassword" required>
+
+                <button class="primary-btn" type="submit">Log In</button>
+
+                <p class="auth-switch">
+                    New here? <a href="#" id="showSignup">Create a faculty account</a>
+                </p>
+
+            </form>
+
+
+            <form id="teacherSignupForm" style="display:none;">
+
+                <span class="eyebrow">FACULTY SIGN UP</span>
+                <h1 class="auth-title">Create your account</h1>
+                <p class="auth-subtitle">Students will be able to find you right after.</p>
+
+                <label>Name</label>
+                <input type="text" id="signupName" required>
+
+                <label>Department</label>
+                <input type="text" id="signupDept" required>
+
+                <label>Subject</label>
+                <input type="text" id="signupSubject" placeholder="e.g. Data Structures" required>
+
+                <label>Email</label>
+                <input type="email" id="signupEmail" required>
+
+                <label>Room</label>
+                <input type="text" id="signupRoom" placeholder="e.g. 204">
+
+                <label>Password</label>
+                <input type="password" id="signupPassword" minlength="6" required>
+
+                <button class="primary-btn" type="submit">Create Account</button>
+
+                <p class="auth-switch">
+                    Already registered? <a href="#" id="showLogin">Log in</a>
+                </p>
+
+            </form>
+
+        </div>
+
+
+        <!-- Admin pane -->
+
+        <div id="adminPane" style="display:none;">
+
+            <form id="adminLoginForm">
+
+                <span class="eyebrow">ADMIN LOGIN</span>
+                <h1 class="auth-title">Dashboard access</h1>
+                <p class="auth-subtitle">Manage faculty and view directory stats.</p>
+
+                <label>Admin email</label>
+                <input type="email" id="adminEmail" required>
+
+                <label>Password</label>
+                <input type="password" id="adminPassword" required>
+
+                <button class="primary-btn" type="submit">Log In</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script src="js/auth.js"></script>
+<script src="js/toast.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>
